@@ -9,7 +9,8 @@
             debugger;
             if (document.referrer.indexOf('wixsite.com') !== -1) {
                 console.trace("2");
-                history.pushState(null, null, location.href);
+                history.replaceState(null, null, location.href);
+                // history.pushState(null, null, location.href);
                 //                window.onpopstate = function (event) {
                 //                    debugger;
                 //                   history.go(1);
