@@ -9,13 +9,13 @@
             debugger;
             if (document.referrer.indexOf('wixsite.com') !== -1) {
                 console.trace("2");
-                history.replaceState(null, null, location.href);
+                // history.replaceState(null, null, location.href);
                 // history.pushState(null, null, location.href);
-                //                window.onpopstate = function (event) {
-                //                    debugger;
-                //                   history.go(1);
-                //                    console.trace("4");
-                //                };
+                window.onpopstate = function (event) {
+                    debugger;
+                    history.go(1);
+                    console.trace("4");
+                };
             }
         };
         console.trace("3");
@@ -23,11 +23,10 @@
         window.onbeforeunload = function () {
             debugger;
             console.trace("5");
-            if (window.performance.navigation.type == 2) {
-                console.trace("6");
-                history.go(1);
-            }
-
+            // if (window.performance.navigation.type == 2) {
+            //     console.trace("6");
+            //     history.go(1);
+            // }
         }
     </script>
 </head>
