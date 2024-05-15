@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Page</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            if (document.referrer.indexOf('sony.net') !== -1) {
+                history.pushState(null, null, location.href);
+                window.onpopstate = function (event) {
+                    history.go(1);
+                };
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <h1>Test page to control "back" operation</h1>
+
+    <p><a href="https://www.sony.net/">sony.net</a></p>
+    <p><a href="https://www.google.com/">Google</a></p>
+
+    <!-- Your content goes here -->
+</body>
+
+</html>
