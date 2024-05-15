@@ -7,8 +7,8 @@
         window.onload = function () {
             console.trace("1");
             debugger;
-            console.trace("2");
             if (document.referrer.indexOf('wixsite.com') !== -1) {
+                console.trace("2");
                 history.pushState(null, null, location.href);
                 window.onpopstate = function (event) {
                     history.go(1);
