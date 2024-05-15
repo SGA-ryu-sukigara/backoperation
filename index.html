@@ -5,19 +5,17 @@
     <title>My Page</title>
     <script type="text/javascript">
         window.onload = function () {
+            console.trace("1");
             debugger;
-            history.pushState(null, null, location.href);
-            window.onpopstate = function (event) {
-                history.go(1);
-                /*
-                            if (document.referrer.indexOf('wixsite.com') !== -1) {
-                                history.pushState(null, null, location.href);
-                                window.onpopstate = function (event) {
-                                    history.go(1);
-                                };
-                            }
-                */
-            };
+            console.trace("2");
+            if (document.referrer.indexOf('wixsite.com') !== -1) {
+                history.pushState(null, null, location.href);
+                window.onpopstate = function (event) {
+                    history.go(1);
+                };
+            }
+        };
+        console.trace("3");
     </script>
 </head>
 
