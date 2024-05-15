@@ -18,6 +18,14 @@
             }
         };
         console.trace("3");
+
+        window.onbeforeunload = function () {
+            if (window.performance.navigation.type == 2) {
+                debugger;
+                history.go(1);
+            }
+
+        }
     </script>
 </head>
 
