@@ -20,8 +20,10 @@
         console.trace("3");
 
         window.onbeforeunload = function () {
+            debugger;
+            console.trace("5");
             if (window.performance.navigation.type == 2) {
-                debugger;
+                console.trace("6");
                 history.go(1);
             }
 
