@@ -10,11 +10,16 @@
             if (document.referrer.indexOf('wixsite.com') !== -1) {
                 console.trace("2");
                 history.pushState(null, null, location.href);
-                window.onpopstate = function (event) {
+                window.addEventListener('popstate', function (e) {
                     debugger;
-                    history.go(1);
                     console.trace("4");
-                };
+                    history.pushState(null, null, null);
+                });
+                //                window.onpopstate = function (event) {
+                //                    debugger;
+                //                    history.go(1);
+                //                    console.trace("4");
+                //                };
             }
         };
         console.trace("3");
