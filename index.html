@@ -5,6 +5,7 @@
     <title>My Page</title>
     <script type="text/javascript">
         window.onload = function () {
+            debugger;
             history.pushState(null, null, location.href);
             window.onpopstate = function (event) {
                 history.go(1);
